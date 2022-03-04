@@ -74,7 +74,7 @@ public class main {
         System.out.print("Pilihan kamu: ");
         int pilihan = Scanner.nextInt();
         Scanner.nextLine();
-        PrintStream var10000;
+        PrintStream output;
         if(pilihan == 1) {
             System.out.println("Jumlah daun pohon kamu sebanyak " + pohon.getDaun() + " helai");
             info(pohon);
@@ -94,16 +94,16 @@ public class main {
             if (pohon.getMusim() == null) {
                 System.out.println("Maaf kamu belum mengatur musim apa yang akan berlangsung untuk pohon kehidupanmu\nAtur musim dulu gih");
             } else {
-                var10000 = System.out;
+                output = System.out;
                 String var2 = pohon.getMusim().getName();
-                var10000.println("Sekarang adalah Musim " + var2 + " dan pohon kamu sedang musim buah " + pohon.getBuah().getName());
+                output.println("Sekarang adalah Musim " + var2 + " dan pohon kamu sedang musim buah " + pohon.getBuah().getName());
             }
             System.out.println("\n");
             info(pohon);
         } else if(pilihan == 7) {
-            var10000 = System.out;
-            int var10001 = pohon.getBuah().getJumlah();
-            var10000.println("Kamu sudah memanen sebanyak " + var10001 + " buah " + pohon.getBuah().getName() + " saat ini");
+            output = System.out;
+            int namaBuah = pohon.getBuah().getJumlah();
+            output.println("Kamu sudah memanen sebanyak " + namaBuah + " buah " + pohon.getBuah().getName() + " saat ini");
             info(pohon);
         } else if(pilihan == 8) {
             menu(pohon);
@@ -160,16 +160,16 @@ public class main {
             System.out.println("Tanggal panen: " + harvestDay);
             System.out.println("Hari sebelum masa panen: " + selisihHari + " hari");
             System.out.println();
-            PrintStream var10000;
-            String var10001;
+            PrintStream output;
+            String namaBuah;
             if (selisihHari <= 1L && selisihHari > -1L) {
-                var10000 = System.out;
-                var10001 = pohon.getBuah().getName();
-                var10000.println("Pohon kamu akan berbuah " + var10001 + "setiap  hari dan kamu dapat memetik buah tersebut dalam " + pohon.getBuah().getLamaBertahan() + " hari sebelum buah " + pohon.getBuah().getName() + " busuk");
+                output = System.out;
+                namaBuah = pohon.getBuah().getName();
+                output.println("Pohon kamu akan berbuah " + namaBuah + " setiap  hari dan kamu dapat memetik buah tersebut dalam " + pohon.getBuah().getLamaBertahan() + " hari sebelum buah " + pohon.getBuah().getName() + " busuk");
             } else if (selisihHari > 1L) {
-                var10000 = System.out;
-                var10001 = pohon.getBuah().getName();
-                var10000.println("Pohon kamu akan berbuah " + var10001 + " setiap " + pohon.getBuah().getMasaPanen() + " hari dan kamu dapat memetik buah tersebut dalam " + pohon.getBuah().getLamaBertahan() + " hari sebelum buah " + pohon.getBuah().getName() + " busuk");
+                output = System.out;
+                namaBuah = pohon.getBuah().getName();
+                output.println("Pohon kamu akan berbuah " + namaBuah + " setiap " + pohon.getBuah().getMasaPanen() + " hari dan kamu dapat memetik buah tersebut dalam " + pohon.getBuah().getLamaBertahan() + " hari sebelum buah " + pohon.getBuah().getName() + " busuk");
             }
 
             System.out.println("=====================================================================================");
