@@ -147,7 +147,7 @@ public class main {
         if (pohon.getMusim() != null) {
             LocalDate hariIni = LocalDate.now();
             LocalDate hariPanen = pohon.getTanggalMusim();
-            hariPanen = hariPanen.plusDays((long)pohon.getBuah().getMasaPanen());
+            hariPanen = hariPanen.plusDays(pohon.getBuah().getMasaPanen());
             long selisihHari = ChronoUnit.DAYS.between(hariIni, hariPanen);
             String today = hariIni.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
             String harvestDay = hariPanen.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
