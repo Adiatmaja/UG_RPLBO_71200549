@@ -57,8 +57,10 @@ public class App {
         creep2.showCharacterInfo();
         System.out.println("\n");
 
+        System.out.println("8. Summon minigolem");
         Golem minigolem = (Golem) golem.summon();
 
+        System.out.println("9. Menampilakan info");
         loneDruid.showCharacterInfo();
         System.out.println("\n");
         spiritBear.showCharacterInfo();
