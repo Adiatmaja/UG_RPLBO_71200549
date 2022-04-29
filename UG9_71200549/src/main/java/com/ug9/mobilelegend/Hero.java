@@ -16,12 +16,6 @@ public class Hero extends Character{
         enemy.setHealth(enemy.getHealth() - getDamage());
         setHealth(getHealth() + lifeSteal);
 
-        if (enemy instanceof Melee || enemy instanceof Ranged){
-            lifeSteal += 150;
-        } else if (enemy instanceof Minion || enemy instanceof Creep){
-            this.healthMax += this.healthBonus;
-        }
-
         if (getHealth() > healthMax){
             setHealth(healthMax);
         }
@@ -29,6 +23,11 @@ public class Hero extends Character{
             enemy.setHealth(0);
             enemy.setDie(true);
             this.level += 1;
+            if (enemy instanceof Melee || enemy instanceof Ranged){
+                lifeSteal += 150;
+            } else if (enemy instanceof Minion || enemy instanceof Creep){
+                this.healthMax += this.healthBonus;
+            }
         }
         attackInformation(enemy, getDamage());
     }
