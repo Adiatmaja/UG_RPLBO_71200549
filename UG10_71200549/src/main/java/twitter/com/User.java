@@ -98,7 +98,7 @@ public class User {
 
         while (biosuccess == false){
             Scanner setbio = new Scanner(System.in);
-            System.out.print("Username Baru : ");
+            System.out.print("Bio : ");
             String bio;
             bio = setbio.nextLine();
 
@@ -120,7 +120,7 @@ public class User {
 
         while (tweetsuccess == false){
             Scanner settweet = new Scanner(System.in);
-            System.out.print("Username Baru : ");
+            System.out.print("Tweet : ");
             String tweet;
             tweet = settweet.nextLine();
 
