@@ -48,17 +48,17 @@ public class Stockbit {
 
     public void printPortfolio(){
         int i = 1;
-        int Total = 0;
+        int TotalHarga = 0;
         System.out.println("--------- Portfolio Client ---------");
         System.out.println("Client: " + investor.getNama());
         System.out.println("No. \tKode Saham\t Jumlah Lot \tHarga \tSub Total");
         for(Saham key : investor.getPortfolio().keySet()){
-            int subTotal = (int) ((investor.getPortfolio().get(key)) * 100 * key.getHarga());
-            Total += subTotal;
+            long subTotal = ((investor.getPortfolio().get(key)) * 100 * key.getHarga());
+            TotalHarga += subTotal;
             System.out.println(i + "\t\t" + key.getKode() + "\t\t\t" + investor.getPortfolio().get(key) + "\t\t\t" + key.getHarga() + "\t" + subTotal);
             i++;
         }
 
-        System.out.println("Total investasi: Rp. " + Total);
+        System.out.println("Total investasi: Rp. " + TotalHarga);
     }
 }
